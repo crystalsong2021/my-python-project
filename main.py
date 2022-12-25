@@ -1,7 +1,7 @@
 #
 # practice string concatenate (f stand for format)
 # Triple code to comment out
-"""
+
 calculation_to_hours = 24
 name_of_unit = "hours"
 
@@ -20,12 +20,9 @@ def days_to_units(num_of_days, custom_msg):
 
 
 # calc_units()
-days_to_units(20, "Awesome!")
-days_to_units(30, "Looks good!")
-"""
-real_age = int(input("Type your real age: "))
+input_days = int(input("Enter the numbers of day\n"))
+input_msg = input("Please enter your message\n")
 
-if real_age >= 18:
-    print("You are an adult")
-else:
-    print("you are not an adult")
+days_to_units(input_days, input_msg)
+# days_to_units(30, "Looks good!")
+
