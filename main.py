@@ -15,14 +15,17 @@ def calc_units():
 
 
 def days_to_units(num_of_days, custom_msg):
-    print(f"{num_of_days} days are {num_of_days * calculation_to_hours} {name_of_unit}")
-    print(custom_msg)
+    # use conditional statement (if/else)
+    if num_of_days > 0:
+        return f"{num_of_days} days are {num_of_days * calculation_to_hours} {name_of_unit}"
+    else:
+        return "Please enter positive value"
 
 
 # calc_units()
 input_days = int(input("Enter the numbers of day\n"))
 input_msg = input("Please enter your message\n")
 
-days_to_units(input_days, input_msg)
+result = days_to_units(input_days, input_msg)
+print(result)
 # days_to_units(30, "Looks good!")
-
