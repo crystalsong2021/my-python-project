@@ -14,7 +14,7 @@ def calc_units():
     print("All Good")
 
 
-def days_to_units(num_of_days, custom_msg):
+def days_to_units(num_of_days):
     # use conditional statement (if/else)
     if num_of_days > 0:
         return f"{num_of_days} days are {num_of_days * calculation_to_hours} {name_of_unit}"
@@ -24,14 +24,18 @@ def days_to_units(num_of_days, custom_msg):
         return "Please enter positive value"
 
 
+def validate_user_input(user_days):
+    print("Hello", type(user_days))
+    if user_days.isdigit():
+        user_days = int(user_days)
+        result = days_to_units(user_days)
+        print(result)
+    else:
+        print("No a digit")
+
+
 # calc_units()
 input_days = input("Enter the numbers of day\n")
+validate_user_input(input_days)
 
-if input_days.isdigit():
-    input_days = int(input_days)
-    result = days_to_units(input_days)
-    print(result)
-else:
-    print("No a digit")
-
-# days_to_units(30, "Looks good!")
+# always encapsulate the logic in the function definition
