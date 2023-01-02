@@ -18,14 +18,20 @@ def days_to_units(num_of_days, custom_msg):
     # use conditional statement (if/else)
     if num_of_days > 0:
         return f"{num_of_days} days are {num_of_days * calculation_to_hours} {name_of_unit}"
+    elif num_of_days == 0:
+        return "you are entering zero. no conversion"
     else:
         return "Please enter positive value"
 
 
 # calc_units()
-input_days = int(input("Enter the numbers of day\n"))
-input_msg = input("Please enter your message\n")
+input_days = input("Enter the numbers of day\n")
 
-result = days_to_units(input_days, input_msg)
-print(result)
+if input_days.isdigit():
+    input_days = int(input_days)
+    result = days_to_units(input_days)
+    print(result)
+else:
+    print("No a digit")
+
 # days_to_units(30, "Looks good!")
