@@ -14,33 +14,22 @@ def calc_units():
     print("All Good")
 
 
-def days_to_units(num_of_days):
-    # use conditional statement (if/else)
-    return f"{num_of_days} days are {num_of_days * calculation_to_hours} {name_of_unit}"
+import helper
 
-
-def validate_user_input(user_days):
-    # if user_days.isdigit():
-    try:
-        user_days = int(user_days)
-        if user_days > 0:
-            result = days_to_units(user_days)
-            print(result)
-        elif user_days == 0:
-            print("You enter a 0. Please enter positive value")
-        else:
-            print("You enter the negative number. Enter positive value")
-    except ValueError:
-        print("No a valid digit")
-
+# Another way to reference the function is:
+# <<from helper import validate_and_execute>> to import only one function
+# or <<from helper import *>> to import everything
 
 # calc_units()
 input_days = ""
 while True:
-    input_days = input("Enter the numbers of day\n")
+    input_days = input("Enter the numbers of days and unit conversion.\n example: 20: hour \n")
     if input_days == "exit":
         break
     else:
-        validate_user_input(input_days)
+        input_day = input_days.split(":")[0]
+        unit = input_days.split(":")[1]
+        days_and_unit_dictionary = {"days": input_day, "unit": unit}
+        helper.validate_user_input(days_and_unit_dictionary)
 
 # always encapsulate the logic in the function definition
