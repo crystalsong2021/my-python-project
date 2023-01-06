@@ -2,19 +2,17 @@
 # practice string concatenate (f stand for format)
 # Triple code to comment out
 
-calculation_to_hours = 24
-name_of_unit = "hours"
 
-days = [20, 30, 25, 50, 110]
-
-
-def calc_units():
-    for i in days:
-        print(f"There are {i * 24 * 60} minutes in {i} days")
-    print("All Good")
+# days = [20, 30, 25, 50, 110]
+#
+#
+# def calc_units():
+#     for i in days:
+#         print(f"There are {i * 24 * 60} minutes in {i} days")
+#     print("All Good")
 
 
-import helper
+from days_to_units import helper
 
 # Another way to reference the function is:
 # <<from helper import validate_and_execute>> to import only one function
