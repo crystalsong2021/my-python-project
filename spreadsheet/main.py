@@ -1,6 +1,6 @@
 import openpyxl
 
-inv_file = openxyl.load_workbook("inventory.xlsx")
+inv_file = openpyxl.load_workbook("inventory.xlsx")
 product_list = inv_file["Sheet1"]
 
 products_per_supplier = {}
@@ -33,13 +33,10 @@ for product_row in range(2, product_list.max_row + 1):
         products_under_10_inv[int(product_num)] = int(inventory)
 
     # add value for total inventory price
-   inventory_price.value = inventory * price
+    inventory_price.value = inventory * price
 
 print(products_per_supplier)
 print(total_value_per_supplier)
 print(products_under_10_inv)
 
 inv_file.save("inventory_with_total_value.xlsx")
-
-
-
