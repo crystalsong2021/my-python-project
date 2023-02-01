@@ -17,13 +17,39 @@ Output: [0]
 """
 
 
-class ListNode:
+class Node:
     def __init__(self, val=0, nxt=None):
-        self.nxt = nxt
         self.val = val
+        self.nxt = nxt
 
 
-list1 = ListNode(1)
-list1.nxt = ListNode(2)
-list1.nxt.nxt = ListNode(4)
-print(list1.val, list1.nxt.val, list1)
+class SLinkedList:
+    def __init__(self):
+        self.headval = None
+
+    # Function to add new Node at the end
+    def addNode(self, newNode):
+        NewNode = Node(newNode)
+        if self.headval is None:
+            self.headval = NewNode
+            return
+        tail = self.headval
+        while tail.nxt:
+            tail = tail.nxt
+        tail.nxt = NewNode
+
+    # Print the linked list
+    def printList(self):
+        tail = self.headval
+        while tail:
+            print(tail.val)
+            tail = tail.nxt
+
+
+list1 = SLinkedList()
+list1.addNode(1)
+list1.addNode(2)
+list1.addNode(3)
+
+list1.printList()
+
