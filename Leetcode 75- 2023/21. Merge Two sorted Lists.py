@@ -13,4 +13,16 @@ Output: []
 Input: list1 = [], list2 = [0]
 Output: [0]
 
+1. need to add the numbers to the  list1 and list2
 """
+
+
+class ListNode:
+    def __init__(self, val=0, nxt=None):
+        self.nxt = nxt
+        self.val = val
+
+
+list1 = ListNode(1)
+list1.next = ListNode(2)
+print(list1.val, list1.next.val)
