@@ -24,5 +24,6 @@ class ListNode:
 
 
 list1 = ListNode(1)
-list1.next = ListNode(2)
-print(list1.val, list1.next.val)
+list1.nxt = ListNode(2)
+list1.nxt.nxt = ListNode(4)
+print(list1.val, list1.nxt.val, list1)
